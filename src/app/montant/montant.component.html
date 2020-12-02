@@ -1,0 +1,13 @@
+<p></p>
+<div class="container">
+    <div class="panel panel-heading">Montant</div>
+        <div class="panel-body">
+         <form #f="ngForm" (ngSubmit)="onAddMontant(f.value)">  
+            <div class="form-group">
+                <label class="control-label">Montant:</label>
+                <input type="text" class="form-control" name="montant" ngModel [(ngModel)]="montantbase.montant1">
+            </div>
+            <button type="submit" class="btn btn-primary">Ajouter-Montant</button>
+         </form> 
+        </div>
+</div>

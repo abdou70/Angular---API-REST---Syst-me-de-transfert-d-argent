@@ -1,0 +1,43 @@
+<p></p>
+<div class="container">
+    <div class="panel panel-heading">Recepteur:</div>
+        <div class="panel-body">
+         <form #f="ngForm" (ngSubmit)="onAddRecepteur(f)">  
+            <div class="form-group">
+                <label class="control-label">Nom-Recepteur:</label>
+                <input type="text" class="form-control" name="nom" ngModel [(ngModel)]="recepteurbase.nom">
+            </div>
+            <div class="form-group">
+                <label class="control-label">Prenom-Recepteur:</label>
+                <input type="text" class="form-control" name="prenom" ngModel [(ngModel)]="recepteurbase.prenom">
+            </div>
+            <div class="form-group">
+                <label class="control-label">Telephone:</label>
+                <input type="text" class="form-control" name="telephone" ngModel [(ngModel)]="recepteurbase.telephone">
+            </div>
+            <div class="form-group">
+                <label class="control-label">Cni:</label>
+                <input type="text" class="form-control" name="cni" ngModel [(ngModel)]="recepteurbase.cni">
+            </div>
+            <div class="form-group">
+                <label class="control-label">Montant:</label>
+                <input type="text" class="form-control" name="montant" ngModel [(ngModel)]="recepteurbase.cni">
+            </div>
+            <button type="submit" class="btn btn-primary"> Ajouter-Recepteur</button>
+         </form> 
+         <table class="table">
+            <tr>
+                <th>ID</th><th>Prenom</th><th>Cni</th><th>montant</th>
+            </tr>
+
+             <tr  *ngFor="let c of listerecepteur">
+                <td> {{ c.id }}</td>
+                <td> {{ c.prenom }}</td>
+                <td> {{ c.cni }}</td>
+                <td> {{ c.montant}}</td>
+             
+            </tr>
+      </table>
+        </div>
+</div>
+
