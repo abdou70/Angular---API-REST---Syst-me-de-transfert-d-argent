@@ -10,7 +10,7 @@
             </div>
             <div class="form-group">
                 <label class="control-label">Date:</label>
-                <input type="text" class="form-control" name="date" ngModel [(ngModel)]="montantbase.date">
+                <input type="date" class="form-control" name="date" ngModel [(ngModel)]="montantbase.date">
             </div>
             <select class="form-control" name="id_recep" ngModel [(ngModel)]="montantbase.id_recept">
                 <option>Choix Recepteur</option>
@@ -24,5 +24,18 @@
             </select>
             <button type="submit" class="btn btn-primary">Ajouter-Montant</button>
          </form> 
+         <table class="table">
+            <tr>
+                <th>ID</th><th>Montant</th><th>Emetteur</th><th>Recepteur</th>
+            </tr>
+
+             <tr  *ngFor="let c of montant">
+                <td> {{ c.id }}</td>
+                <td> {{ c.montant }}</td>
+                <td> {{ c.id_emet}}</td>
+                <td> {{ c.id_recept}}</td>
+             
+            </tr>
+      </table>
         </div>
 </div>

@@ -48,9 +48,9 @@ export class MontantComponent implements OnInit {
     this.montantbase.date=p.value["date"];
     this.montantbase.id_recept=p.value["id_recep"];
     this.montantbase.id_emet=p.value["id_emet"];
-    //console.log(this.montantbase.montant1);
-    //console.log(this.montantbase.id_emet);
-    this.montantService.addTransfert(this.montantbase.montant1,
+    // console.log(this.montantbase.date);
+    // console.log(this.montantbase.id_emet);
+    this.montantService.addTransfert(this.montantbase.montant1,this.montantbase.date,
       this.montantbase.id_recept,this.montantbase.id_emet).subscribe(
       
       (data) => {
