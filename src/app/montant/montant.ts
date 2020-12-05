@@ -2,15 +2,15 @@ export class Montant {
 
     montant1:number;
     date:String;
-    id_emet:number;
-    id_recept:number
+    id_emetteur:number;
+    id_recepteur:number
 
-    constructor(montant1:number,date:String,id_emet:number,id_recept:number){
+    constructor(montant1:number,date:String,id_emetteur:number,id_recepteur:number){
 
         this.montant1=montant1;
         this.date=date;
-        this.id_emet=id_emet;
-        this.id_recept=id_recept;
+        this.id_emetteur=id_emetteur;
+        this.id_recepteur=id_recepteur;
 
 
     }

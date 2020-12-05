@@ -19,7 +19,7 @@ export class EmetteurComponent implements OnInit {
   prenom:'',
   telephone:'',
   cni:'',
-  montant:0
+  montant_envoyer:0
   };
 
   constructor(public http:HttpClient,private emetteurService:EmetteurService) { 
@@ -48,7 +48,7 @@ export class EmetteurComponent implements OnInit {
     this.emetteurbase.prenom=p.value["prenom"];
     this.emetteurbase.telephone=p.value["telephone"];
     this.emetteurbase.cni=p.value["cni"];
-    this.emetteurbase.montant=p.value["montant"];
+    this.emetteurbase.montant_envoyer=p.value["montant"];
     this.emetteurService.addEmetteur(this.emetteurbase).subscribe(
       
       (data) => {

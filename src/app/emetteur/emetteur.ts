@@ -4,15 +4,15 @@ export class Emetteur {
     prenom : String;
     telephone :String;
     cni :String;
-    montant:number;
+    montant_envoyer:number;
 
-    constructor(nom : String, prenom:String,telephone:String,cni:String,montant:number){
+    constructor(nom : String, prenom:String,telephone:String,cni:String,montant_envoyer:number){
      
         this.nom=nom;
         this.prenom=prenom;
         this.telephone=telephone;
         this.cni=cni;
-        this.montant=montant;
+        this.montant_envoyer=montant_envoyer;
     }
 }
 

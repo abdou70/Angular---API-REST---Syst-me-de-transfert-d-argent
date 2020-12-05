@@ -5,19 +5,19 @@
          <form #f="ngForm" (ngSubmit)="onAddMontant(f)">  
             <div class="form-group">
                 <label class="control-label">Montant:</label>
-                <input type="text" class="form-control" name="montant"
+                <input type="number" class="form-control" name="montant"
                  ngModel [(ngModel)]="montantbase.montant1">
             </div>
             <div class="form-group">
                 <label class="control-label">Date:</label>
                 <input type="date" class="form-control" name="date" ngModel [(ngModel)]="montantbase.date">
             </div>
-            <select class="form-control" name="id_recep" ngModel [(ngModel)]="montantbase.id_recept">
+            <select class="form-control" name="id_recep" ngModel [(ngModel)]="montantbase.id_recepteur">
                 <option>Choix Recepteur</option>
                     <option name="id_recepteur"  *ngFor="let recep of ListeRecepteur" value="{{recep.id}}"
                      >{{ recep.cni }} </option>
             </select><br>
-            <select class="form-control" name="id_emet" ngModel [(ngModel)]="montantbase.id_emet"> 
+            <select class="form-control" name="id_emet" ngModel [(ngModel)]="montantbase.id_emetteur"> 
                 <option>Choix Emetteur</option>
                 <option name="id_emetteur" *ngFor="let recep of ListeEmetteur" value="{{recep.id}}" 
                 >{{ recep.cni }}</option>
@@ -31,7 +31,7 @@
 
              <tr  *ngFor="let c of montant">
                 <td> {{ c.id }}</td>
-                <td> {{ c.montant }}</td>
+                <td> {{ c.montant}}</td>
                 <td> {{ c.id_emet}}</td>
                 <td> {{ c.id_recept}}</td>
              

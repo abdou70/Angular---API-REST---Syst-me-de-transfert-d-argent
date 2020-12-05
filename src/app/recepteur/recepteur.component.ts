@@ -19,7 +19,7 @@ export class RecepteurComponent implements OnInit {
     prenom:'',
     telephone:'',
     cni:'',
-    montant:0
+    montant_recu: 0
   }
 
   constructor(public http:HttpClient,private recepteurService:RecepteurService) { 
@@ -42,7 +42,7 @@ export class RecepteurComponent implements OnInit {
     this.recepteurbase.prenom=p.value["prenom"];
     this.recepteurbase.telephone=p.value["telephone"];
     this.recepteurbase.cni=p.value["cni"];
-    this.recepteurbase.montant=p.value["montant"];
+    this.recepteurbase.montant_recu=p.value["montant"];
     this.recepteurService.addRecepteur(this.recepteurbase).subscribe(
       (data) => {
 

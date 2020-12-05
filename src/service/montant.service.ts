@@ -15,7 +15,7 @@ export class MontantService{
     //listemetteur:any[]=[];
     montant:any[]=[];
 
-    addTransfert(montant:any,date:String,id_recept:number,id_emet:number,
+    addTransfert(montant:number,date:String,id_recept:number,id_emet:number,
         ):Observable<Montant>{
         return this.http.post<Montant>
         (`http://localhost:8080/Transfert/${id_recept}/save/${id_emet}/${montant}/${date}`,{});

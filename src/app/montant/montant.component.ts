@@ -16,10 +16,10 @@ export class MontantComponent implements OnInit {
 
   montant:any[]=[];
   montantbase={
-   montant1:'',
+   montant1:0,
    date:'',
-   id_emet:0,
-   id_recept:0
+   id_emetteur:0,
+   id_recepteur:0
   };
   constructor(private montantService:MontantService
     ,private recepteurService:RecepteurService
@@ -46,12 +46,12 @@ export class MontantComponent implements OnInit {
    
     this.montantbase.montant1=p.value["montant"];
     this.montantbase.date=p.value["date"];
-    this.montantbase.id_recept=p.value["id_recep"];
-    this.montantbase.id_emet=p.value["id_emet"];
+    this.montantbase.id_recepteur=p.value["id_recep"];
+    this.montantbase.id_emetteur=p.value["id_emet"];
     // console.log(this.montantbase.date);
     // console.log(this.montantbase.id_emet);
     this.montantService.addTransfert(this.montantbase.montant1,this.montantbase.date,
-      this.montantbase.id_recept,this.montantbase.id_emet).subscribe(
+      this.montantbase.id_recepteur,this.montantbase.id_emetteur).subscribe(
       
       (data) => {
 
@@ -63,6 +63,11 @@ export class MontantComponent implements OnInit {
        
       }
     );
+    this.montantService.getAllTransfert().subscribe((data)=>{
+      this.montant=data;
+      console.log(data);
+    })
+    console.log(p);
 
   }
 
